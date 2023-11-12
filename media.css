@@ -1,0 +1,348 @@
+/* Start of Media Query of Common Styling */
+@media screen and (min-width:576px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .container {
+        max-width: 88%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .container {
+        max-width: 85%;
+    }
+}
+
+
+/* End of Common Styling */
+
+/* Start of Media Query of Navbar */
+
+@media screen and (min-width:1200px) {
+
+    nav .NavLinks #MenuBar,
+    nav .NavIcon {
+        display: none;
+    }
+
+    nav .NavLinks {
+
+        order: 0;
+    }
+
+    nav .NavItems {
+        width: 33.33%;
+    }
+
+    .NavUl ul {
+        background-color: transparent;
+        position: static;
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 30px;
+    }
+
+    nav .NavLinks li {
+        margin-bottom: 0;
+    }
+
+    .NavContent {
+        column-gap: 0;
+    }
+
+    nav .LightDark {
+        text-align: right;
+    }
+
+    :root:not(:root:has(:target)) li a[href=".Home"],
+    :root:has(#Home:target) .NavLinks a[href=".Home"],
+    :root:has(#Chefs:target) .NavLinks a[href="#Chefs"],
+    :root:has(#gallery:target) .NavLinks a[href="#Gallery"],
+    :root:has(#contact:target) .NavLinks a[href="#contact"] {
+        color: var(--titleColor);
+    }
+
+    nav .NavLinks ul li a {
+        position: relative;
+        display: block;
+        margin-bottom: 7px;
+    }
+
+    nav .NavLinks ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 115%;
+        width: 0%;
+        height: 2px;
+        background-color: var(--MainColor);
+        transition: width 1s;
+    }
+
+    nav .NavLinks ul li a:hover::after {
+        width: 100%;
+    }
+
+    :root:not(:root:has(:target)) li a[href=".Home"]::after,
+    :root:has(#Home:target) .NavLinks a[href=".Home"]::after,
+    :root:has(#Chefs:target) .NavLinks a[href="#Chefs"]::after,
+    :root:has(#gallery:target) .NavLinks a[href="#gallery"]::after,
+    :root:has(#contact:target) .NavLinks a[href="#contact"]::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 115%;
+        width: 100%;
+        height: 2px;
+        background-color: var(--MainColor);
+        transition: width 1s;
+    }
+
+    nav .NavLinks ul li:first-of-type {
+        margin-top: 0px;
+    }
+
+}
+
+/* End of Media Query of Navbar */
+
+/* Start of Media Query of Home Main Section */
+
+@media screen and (min-width:992px) {
+
+    .HMain .HContent {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 150px;
+    }
+
+
+    .HMain .HCON {
+        text-align: left;
+    }
+
+    .HMain .HImg {
+        text-align: right;
+        order: 1;
+    }
+
+    .HMain .HImg img {
+        width: 100%;
+    }
+
+    .HMain .HBtns .HBtn1 {
+        border-radius: 0 50px 50px 50px;
+    }
+
+    .HMain .HCON .HBtns {
+        justify-content: flex-start;
+    }
+
+}
+
+/* End of Media Query of Home Main Section */
+
+
+
+/* Start of Media Query of Chefs Section */
+
+@media screen and (min-width:768px) {
+
+
+    .Chefs .ChefsContent .ChefsItems {
+        flex-flow: wrap row;
+        column-gap: 40px;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width:992px) {
+
+
+    .Chefs .ChefsContent .ChefsItems {
+        flex-flow: nowrap row;
+        column-gap: 30px;
+    }
+}
+
+/* End of Media Query of Chefs Section */
+/* End of Chefs Section */
+
+/* Start of Media Query of Gallery Section */
+
+@media screen and (min-width:768px) {
+    .Gallery .GImgs {
+        column-gap: 20px;
+        max-height: 1805px;
+    }
+
+
+
+    .pizza {
+        order: -4;
+
+    }
+
+    .burger {
+        order: -3;
+    }
+
+    .beef-steak {
+        order: -2;
+    }
+
+    .frittata {
+        order: -1;
+    }
+
+
+}
+
+@media screen and (min-width:992px) {
+    #gallery .GImgs {
+        max-height: 875px;
+    }
+
+    .frittata {
+        order: 0;
+    }
+
+    .burger {
+        order: 0;
+    }
+
+
+
+
+}
+
+@media screen and (min-width:1200px) {
+    .Gallery .GImgs {
+        max-height: 1200px;
+    }
+}
+
+/* End of Media Query of Gallery Section */
+/* End of Gallery Section */
+
+/* Start of Media Query of Contact Section */
+
+@media screen and (min-width:768px) {
+    .Contact .ContactMap iframe {
+        height: 320px;
+    }
+
+    .Contact .CInfo ul {
+        flex-flow: row wrap;
+        column-gap: 15px;
+    }
+
+    .Contact .CInfo ul li {
+        width: calc(50% - 8px);
+    }
+}
+
+@media screen and (min-width:992px) {
+    .Contact form {
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 15px;
+    }
+
+
+}
+
+/* End of Media Query of Contact Section */
+/* End of Contact Section */
+
+/* Start of Media Query of Footer */
+@media screen and (min-width:576px) {
+    footer .footer-newsletter form {
+        display: flex;
+        flex-direction: row;
+        column-gap: 5px;
+    }
+
+
+}
+
+@media screen and (min-width:768px) {
+    footer .footer-content {
+        flex-direction: row;
+        column-gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    footer .footer-item.contact {
+        order: -1;
+    }
+
+    footer .footer-item.desc {
+
+        order: -2;
+    }
+
+    footer .footer-item .newsletter {
+
+        order: 1;
+        width: 100%;
+    }
+
+
+
+    footer .footer-contact p {
+        white-space: nowrap;
+    }
+
+    footer .footer-contact ul {
+        row-gap: 20px;
+    }
+
+
+}
+
+@media screen and (min-width:1200px) {
+
+
+    footer .footer-content {
+        flex-flow: row nowrap;
+        column-gap: 30px;
+    }
+
+    footer .footer-item.contact,
+    footer .footer-item.desc,
+    footer .footer-item.newsletter {
+
+        order: 0;
+    }
+
+    footer .footer-item.newsletter {
+        flex-grow: 1;
+    }
+
+    footer .footer-contact p {
+        white-space: initial;
+    }
+
+    footer .quick-links ul {
+        row-gap: 5px;
+    }
+}
+
+/* End of Media Query of Footer */
+/* End of Footer */

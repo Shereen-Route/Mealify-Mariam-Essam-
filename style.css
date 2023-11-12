@@ -1,0 +1,923 @@
+/* Start of General Styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 30px;
+
+}
+
+
+:root {
+    --MainColor: #CE1212;
+    --lightColor: #ef1717;
+    --titleColor: #37373F;
+    --backgroundColor: #EEEEEE;
+    --logoColor: #212529;
+    --whiteColor: #fff;
+    --bodyColor: #4f4f5a;
+    --box-shadowColor: lightgray;
+    --social-backgroundColor: #ffffff4d;
+    --img-layer-color: #00000096;
+    --CInfo-color: #7d7d7d;
+    --ListBackgroundColor: #F5F5F5;
+
+
+}
+
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 900px;
+    font-size: 65px;
+    width: 90%;
+
+}
+
+h2 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700px;
+}
+
+h1,
+h2 {
+    color: var(--titleColor);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Dark Mode styling */
+
+:root:has(#Dark:checked) {
+    --MainColor: #C17E1F;
+    --lightColor: #ed9d2f;
+    background-color: #252525;
+    --backgroundColor: #202020;
+    --titleColor: #FFFFFF;
+    --ListBackgroundColor: #0D0D0D;
+    --logoColor: #F3F3F3;
+    --whiteColor: #171717;
+    --box-shadowColor: #171717;
+    --greyColor: #7F7F90;
+    --bodyColor: #C4C4C4;
+
+}
+
+:root:has(#Dark:checked) .Gallery .GImgs .GI-Item {
+    border-color: white;
+}
+
+:root:has(#Dark:checked) .Gallery .GImgs .GI-Content p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+:root:has(#Dark:checked) .HMain .HImg img {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+:root:has(#Dark:checked) .chefs .ChefsItem .ChefsImg::before {
+    content: "";
+    background: url(img/team-shape-dark.svg);
+}
+
+:root:has(#Dark:checked) #contact form {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+:root:has(#Dark:checked) .Chefs .ChefsItem {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* End of General Styling */
+
+.container {
+    max-width: 93%;
+    margin: auto;
+}
+
+.GHeading,
+h2 {
+    text-transform: uppercase;
+}
+
+h2 span {
+    color: var(--MainColor);
+}
+
+.GHeading {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--greyColor);
+    margin-bottom: 15px;
+}
+
+.Btn {
+    font-family: 'Open Sans', sans-serif;
+    padding: 12px 25px;
+    white-space: nowrap;
+}
+
+.RedBtn {
+    background-color: var(--MainColor);
+    color: var(--whiteColor);
+    -webkit-transition: background-color 500ms;
+    -o-transition: background-color 500ms;
+    transition: background-color 500ms;
+    font-size: 15px;
+    border-radius: 50px;
+
+}
+
+.RedBtn:hover {
+    background-color: var(--lightColor);
+}
+
+
+/* Start of Home Section */
+/* Start of Navbar */
+nav {
+    padding: 20px 0;
+    position: fixed;
+    background-color: var(--whiteColor);
+    width: 100%;
+    box-shadow: 0 0 7px 1px var(--box-shadowColor);
+    z-index: 99999;
+}
+
+.NavContent {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    align-items: baseline;
+}
+
+nav .NavLogo {
+    margin-right: auto;
+}
+
+nav .NavLogo a {
+    color: var(--logoColor);
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav .NavLogo a>span {
+    color: var(--MainColor);
+}
+
+nav input[type="checkbox"] {
+    appearance: none;
+}
+
+nav .NavLinks {
+    order: 1;
+}
+
+.NavUl ul {
+    background-color: var(--whiteColor);
+    padding: 0;
+    width: 0px;
+    height: 100vh;
+    overflow: hidden;
+    right: 0;
+    top: 55px;
+    position: fixed;
+    transition: width 500ms, background-color 1s;
+}
+
+nav .NavLinks li {
+    margin-bottom: 30px;
+}
+
+nav .NavLinks a {
+    color: var(--greyColor);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    transition: color 1s;
+}
+
+nav .close-menu i,
+nav .NavIcon,
+nav .LightDark i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+nav .NavLinks a:hover {
+    color: var(--titleColor);
+}
+
+nav .NavLinks #MenuBar:checked~.NavUl ul {
+    padding: 0px 20px;
+    width: 50%;
+}
+
+nav .NavLinks #MenuBar:checked~.NavUl {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+nav .NavLinks ul li:first-of-type {
+    margin-top: 50px;
+}
+
+nav .LightDark,
+nav .NavIcon {
+    color: var(--logoColor);
+}
+
+nav .LightDark .fa-sun {
+    display: none;
+}
+
+nav .LightDark input:checked+label .fa-moon {
+    display: none;
+}
+
+nav .LightDark input:checked+label .fa-sun {
+    display: inline-block;
+}
+
+/* End of Navbar */
+
+/* Start of Main Home Section */
+.HMain {
+    background-color: var(--backgroundColor);
+    padding: 120px 0 50px 0;
+}
+
+
+
+.HMain .HContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.HMain .HCON,
+.HMain .HImg {
+    width: 100%;
+}
+
+.HMain .HImg {
+    margin-bottom: 40px;
+}
+
+.HMain .HImg img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px var(--greyColor);
+}
+
+
+@keyframes shake {
+    0% {
+
+        transform: translate(1px, 1px);
+    }
+
+    20% {
+
+        transform: rotate(1deg) translate(-1px, -1px);
+    }
+
+    40% {
+
+        transform: rotate(-1deg) translate(2px, 0px);
+
+    }
+
+    60% {
+
+        transform: rotate(0deg) translate(-3px, -1px);
+    }
+
+    80% {
+
+        transform: rotate(-1deg) translate(2px, 1px);
+    }
+
+    100% {
+
+        transform: rotate(0deg) translate(-2px, -1px);
+    }
+}
+
+.HMain .HImg img:hover {
+    animation: shake 600ms alternate infinite;
+}
+
+.HMain .HCON {
+    text-align: center;
+}
+
+.HMain .HCON h1 {
+    margin-bottom: 20px;
+}
+
+.HMain .HCON p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    color: var(--bodyColor);
+    margin-bottom: 30px;
+}
+
+.HMain .HBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.HMain .HBtns .HBtn2 {
+    color: var(--logoColor);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    transition: color 1s;
+}
+
+.HMain .HBtns .HBtn2 i {
+    color: var(--logoColor);
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 15px;
+    width: 43.5px;
+    height: 43.5px;
+    z-index: 5;
+    transition: color 1s;
+}
+
+.VideoIcon {
+    background-image: linear-gradient(to right, #CE1212 0 50%, transparent 50% 100%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
+
+}
+
+.VideoIcon {
+    background-image: linear-gradient(to right, #CE1212 0 50%, transparent 50% 100%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
+
+}
+
+
+
+
+.HMain .HBtn .HBtn2:hover i,
+.HMain .HBtn .HBtn2:hover {
+    color: #CE1212;
+}
+
+
+
+
+/* Start of Chefs Section */
+.Chefs {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.Chefs h2 {
+
+    margin-bottom: 50px;
+
+}
+
+.Chefs .ChefsItem {
+    width: 100%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px 2px var(--box-shadowColor);
+    box-shadow: 0 0 10px 2px var(--box-shadowColor);
+    -webkit-transition: -webkit-transform 300ms;
+    transition: -webkit-transform 300ms;
+    -o-transition: transform 300ms;
+    transition: transform 300ms;
+    transition: transform 300ms, -webkit-transform 300ms;
+    position: relative;
+    background-color: var(--whiteColor);
+}
+
+.Chefs .ChefsItem:hover {
+    -webkit-transform: scale(1.07);
+    -ms-transform: scale(1.07);
+    transform: scale(1.07);
+}
+
+.Chefs .ChefsItems {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+
+.Chefs .ChefsItem .ChefsImg img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.Chefs .ChefsItem .ChefsImg {
+    position: relative;
+}
+
+.Chefs .ChefsItem .ChefsImg::before {
+    content: "";
+    background: url(../Images/team-shape.svg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.Chefs .ChefsItem {
+    overflow: hidden;
+}
+
+.Chefs .ChefsItem .ChefsCont {
+    padding: 20px;
+}
+
+.Chefs .ChefsItem .ChefsCont h3 {
+    margin-bottom: 5px;
+    font-size: 19px;
+    color: var(--titleColor);
+}
+
+.Chefs .ChefsItem .ChefsCont span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--greyColor);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.Chefs .ChefsItem .ChefsCont p {
+    font-style: italic;
+    color: var(--greyColor);
+}
+
+.Chefs .ChefsSocial {
+    position: absolute;
+    right: -10%;
+    top: 5%;
+    visibility: hidden;
+    -webkit-transition: all 200ms 300ms;
+    -o-transition: all 200ms 300ms;
+    transition: all 200ms 300ms;
+}
+
+.Chefs .ChefsSocial .ChefsLayer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 15px;
+    background-color: var(--social-backgroundColor);
+    border-radius: 5px;
+}
+
+.Chefs .ChefsSocial .ChefsLayer i {
+    font-size: 18px;
+    opacity: 0.5;
+    cursor: pointer;
+    color: #212529;
+}
+
+.Chefs .ChefsSocial .ChefsLayer i:hover {
+    opacity: 1;
+}
+
+.Chefs .ChefsItem:hover>.ChefsSocial {
+    visibility: visible;
+    right: 3%;
+}
+
+/* Start of Gallery Section */
+.Gallery {
+    text-align: center;
+    padding: 80px 0;
+    background-color: var(--backgroundColor);
+}
+
+.Gallery h2 {
+    margin-bottom: 30px;
+}
+
+.Gallery .GImgs {
+    width: 32%;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    flex-flow: column wrap;
+    row-gap: 20px;
+    height: auto;
+
+}
+
+.Gallery .GImgs img {
+    width: 100%;
+
+}
+
+.Gallery .GImgs .GImg {
+    position: relative;
+    overflow: hidden;
+}
+
+.Gallery .GImgs .GI-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    transition: all 400ms;
+}
+
+.Gallery .GImgs .GI-Item {
+    position: relative;
+    border: 4px solid var(--whiteColor);
+    overflow: hidden;
+}
+
+.Gallery .GImgs .GI-Content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 400ms;
+    padding: 0 20px;
+}
+
+.Gallery .GImgs .GI-Content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.Gallery .GImgs .GI-Content p {
+    color: var(--box-shadowColor);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Gallery .GImgs .GImg :hover .GI-layer {
+    height: 100%;
+
+}
+
+.Gallery .GImgs .GImg:hover .GI-Content {
+    opacity: 1;
+}
+
+.Gallery .GImgs .GImg img {
+    width: 100%;
+
+    transition: transform 1s;
+
+}
+
+.Gallery .GImgs .GImg :hover img {
+    transform: scale(1.02);
+}
+
+
+
+
+/* Start of Contact Section */
+.Contact {
+    padding: 80px 0;
+    text-align: center;
+
+}
+
+.Contact .ContactItems {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.Contact h2 {
+    margin-bottom: 30px;
+}
+
+.Contact .ContactMap {
+    position: relative;
+}
+
+.Contact .ContactMap iframe {
+    margin-top: 0;
+    width: 100%;
+}
+
+.Contact .CInfo ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 15px;
+}
+
+.Contact .CInfo ul li {
+    display: flex;
+    column-gap: 20px;
+    padding: 20px;
+    background-color: var(--ListBackgroundColor);
+}
+
+.Contact .CInfo ul li i {
+
+    color: var(--whiteColor);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: var(--MainColor);
+    text-align: center;
+    line-height: 50px;
+}
+
+
+
+.Contact .CInfo h3 {
+    color: var(--CInfo-color);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.Contact .CInfo ul li a,
+.Contact .CInfo ul li p {
+    color: var(--logoColor);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Contact .CInfo ul li p span {
+    font-weight: 700;
+}
+
+.Contact .CForm input,
+.Contact .CForm textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--box-shadowColor);
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+
+.Contact .CForm input:focus,
+.Contact .CForm textarea:focus {
+    border-color: var(--MainColor) !important;
+}
+
+
+.Contact form {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 20px;
+    box-shadow: 0 0 30px 10px var(--ListBackgroundColor);
+    margin-top: 20px;
+    background-color: var(--whiteColor);
+}
+
+.Contact form .form-input {
+    width: 100%;
+}
+
+
+.Contact .CForm textarea {
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+.Contact form .form-submit {
+    margin: 0 auto;
+}
+
+.Contact form .form-submit button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Start of Footer */
+footer {
+    background: url(../Images/textured-metal-background.jpg);
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+}
+
+footer .footer-layer {
+    width: 100%;
+    height: 100%;
+    padding: 80px 0;
+    background-color: black;
+    color: white;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+footer .footer-contact .footer-item {
+    width: 100%;
+}
+
+footer .footer-desc .footer-logo {
+    display: flex;
+    -webkit-column-gap: 10px;
+    column-gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+footer .footer-desc .footer-logo img {
+    width: 10%;
+}
+
+footer .footer-desc .footer-logo h2.logo {
+    color: white;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+
+}
+
+footer p {
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer .footer-social {
+    text-align: center;
+}
+
+footer .footer-social h3 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--greyColor);
+}
+
+footer h3 {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+footer .footer-social .footer-social-icons {
+
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 10px;
+}
+
+footer .footer-social-icons i {
+    width: 19%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+footer .footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+footer form .form-input input,
+footer form .form-submit button {
+    width: 100%;
+    border-radius: 1px;
+}
+
+footer form .form-input input {
+    padding: 12px 90px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+}
+
+footer form .form-submit {
+    margin-bottom: 20px;
+}
+
+footer form .form-submit button {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: none;
+}
+
+footer .quick-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer .quick-links ul li {
+    width: 40%;
+    transition: transform 500ms, background-color 500ms;
+    padding: 8px;
+}
+
+footer .quick-links ul li a {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer .quick-links ul li i {
+    margin-right: 5px;
+}
+
+footer .quick-links ul li:hover {
+    transform: translateX(10px);
+    background-color: #222;
+}
+
+footer .footer-contact ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 15px;
+    justify-content: space-between;
+}
+
+footer .footer-contact ul li {
+    display: flex;
+    column-gap: 10px;
+}
+
+footer .footer-contact ul li a,
+footer .footer-contact ul li p {
+    color: var(--whiteColors);
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+}
+
+footer .footer-contact ul li i {
+    width: 7%;
+    font-size: 20px;
+    color: var(--MainColor);
+}
